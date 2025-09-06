@@ -18,5 +18,10 @@ import './commands'
 	
 import 'cypress-plugin-api'
 
+// Import Page Object Models and Utilities
+import './pages/AutomationExerciseAPI.js'
+import './utils/APIUtils.js'
+import './utils/TestDataFactory.js'
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

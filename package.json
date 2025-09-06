@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:simple": "cypress run --spec 'cypress/e2e/API-AutomationExerice/simple-api-tests.cy.js'",
+    "test:products": "cypress run --spec 'cypress/e2e/API-AutomationExerice/products-api.cy.js'",
+    "test:brands": "cypress run --spec 'cypress/e2e/API-AutomationExerice/brands-api.cy.js'",
+    "test:complete": "cypress run --spec 'cypress/e2e/API-AutomationExerice/complete-api-suite.cy.js'",
+    "test:all": "cypress run --spec 'cypress/e2e/API-AutomationExerice/*.cy.js'",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox"
   },
   "keywords": [],
   "author": "",

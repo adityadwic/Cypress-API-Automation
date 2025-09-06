@@ -27,6 +27,18 @@ module.exports = defineConfig({
 
       return config
     },
+    // API Testing specific configuration
+    baseUrl: 'https://automationexercise.com',
+    requestTimeout: 10000,
+    responseTimeout: 10000,
+    defaultCommandTimeout: 10000,
+    retries: {
+      runMode: 2,
+      openMode: 1
+    },
+    env: {
+      apiBaseUrl: 'https://automationexercise.com/api'
+    }
   },
   'chromeWebSecurity': false,
 });

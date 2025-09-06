@@ -1,0 +1,66 @@
+name: 🚀 Cypress API Tests
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Run tests daily at 6 AM UTC
+    - cron: '0 6 * * *'
+
+jobs:
+  cypress-run:
+    name: 🧪 Run API Tests
+    runs-on: ubuntu-20.04
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        # Run tests on multiple Node.js versions
+        node-version: [16.x, 18.x]
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+        
+      - name: 🔧 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🧪 Run Main API Tests
+        run: npm run test:simple
+        continue-on-error: false
+        
+      - name: 🏷️ Run Brands API Tests
+        run: npm run test:brands
+        continue-on-error: true
+        
+      - name: 📦 Run Products API Tests
+        run: npm run test:products
+        continue-on-error: true
+        
+      - name: 🔄 Run Integration Tests
+        run: npm run test:complete
+        continue-on-error: true
+        
+      - name: 📊 Upload Cypress Screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots-${{ matrix.node-version }}
+          path: cypress/screenshots
+          retention-days: 30
+          
+      - name: 📹 Upload Cypress Videos
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos-${{ matrix.node-version }}
+          path: cypress/videos
+          retention-days: 30
