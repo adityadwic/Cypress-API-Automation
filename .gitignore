@@ -9,6 +9,7 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 cypress/logs/
+cypress/reports/
 
 # Test results
 test-results/

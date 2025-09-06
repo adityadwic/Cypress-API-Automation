@@ -38,6 +38,15 @@ module.exports = defineConfig({
     },
     env: {
       apiBaseUrl: 'https://automationexercise.com/api'
+    },
+    // Test reporting configuration
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
+      timestamp: 'mmddyyyy_HHMMss'
     }
   },
   'chromeWebSecurity': false,
