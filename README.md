@@ -119,6 +119,8 @@ npm run test:firefox      # Firefox browser
 
 ### 📊 Test Reporting
 
+<img width="1439" height="843" alt="cypress-test-report" src="https://github.com/user-attachments/assets/f176896a-9f69-4ada-89a0-7841a25489e9" />
+
 ```bash
 # Generate and view HTML reports
 npm run test:report       # Run tests + generate report
