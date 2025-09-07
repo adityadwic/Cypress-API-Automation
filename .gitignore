@@ -9,7 +9,12 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 cypress/logs/
-cypress/reports/
+
+# Test Reports (keep structure but ignore generated files)
+cypress/reports/*.json
+cypress/reports/*.html
+cypress/reports/html/
+cypress/reports/assets/
 
 # Test results
 test-results/

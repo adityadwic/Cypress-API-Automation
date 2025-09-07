@@ -41,13 +41,25 @@ cypress/
 ├── e2e/
 │   └── API-AutomationExerice/
 │       ├── simple-api-tests.cy.js          ✅ Main working tests (8/8 passing)
-│       ├── products-api.cy.js              📦 Products API tests
-│       ├── brands-api.cy.js                🏷️ Brands API tests
+│       ├── products-api.cy.js              📦 Products API tests with POM
+│       ├── brands-api.cy.js                🏷️ Brands API tests with POM
 │       └── complete-api-suite.cy.js        🔄 Integration tests
-├── reports/                                📊 Test reports
+├── support/
+│   ├── commands.js                         🛠️ Custom Cypress commands
+│   ├── e2e.js                             ⚙️ Global test configuration
+│   ├── pages/
+│   │   └── AutomationExerciseAPI.js       📄 Page Object Model
+│   └── utils/
+│       ├── APIUtils.js                    🔧 API utility functions
+│       └── TestDataFactory.js            🏭 Test data generator
+├── reports/                               📊 Test reports (auto-generated)
 │   ├── html/
-│   │   └── merged-report.html              🎯 Interactive HTML report
-│   ├── *.json                             📄 Raw test data
+│   │   └── merged-report.html             🎯 Interactive HTML report
+│   └── *.json                            📄 Raw test data
+docs/
+├── REPORTING.md                           📋 Reporting guide
+└── TEST_REPORT.md                         📊 Latest test results
+```
 │   └── *.html                             📋 Individual reports
 └── support/
     ├── pages/

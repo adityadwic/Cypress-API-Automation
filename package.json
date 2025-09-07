@@ -14,7 +14,7 @@
     "test:headed": "cypress run --headed",
     "test:chrome": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox",
-    "test:report": "npm run test:simple && npm run generate:report",
+    "test:report": "npm run test:all && npm run generate:report",
     "generate:report": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json && marge cypress/reports/merged-report.json --reportDir cypress/reports/html",
     "clean:reports": "rm -rf cypress/reports",
     "report:open": "open cypress/reports/html/merged-report.html"
